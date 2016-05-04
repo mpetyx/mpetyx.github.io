@@ -815,6 +815,14 @@ section .section-title {
 	margin-top: 20px;
 }
 
+.logistic-matters ul li {
+	font-size: 15px;
+	line-height: 34px;
+}
+
+.tax-matters ul li {
+	line-height: 34px;
+}
 /*--------------------------  feature  ----------------------------------*/
 
 .feature {
