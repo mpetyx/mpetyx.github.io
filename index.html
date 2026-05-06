@@ -81,6 +81,8 @@
         drop-shadow(0 0 18px var(--cyan-glow))
         drop-shadow(0 0 40px rgba(6, 182, 212, 0.22));
       transition: filter 0.3s ease;
+      animation: owl-blink 10s ease-in-out infinite;
+      transform-origin: center center;
     }
 
     .logo:hover {
@@ -117,13 +119,29 @@
       letter-spacing: 0.02em;
     }
 
-    /* Link pills */
+    /* ── Owl blink animation ── */
+    @keyframes owl-blink {
+      0%,   94%  { transform: scaleY(1);    }
+      95%         { transform: scaleY(0.94); }
+      97%         { transform: scaleY(1);    }
+      98%         { transform: scaleY(0.96); }
+      100%        { transform: scaleY(1);    }
+    }
+
+    /* Link items (pill + caption wrapper) */
     .links {
       display: flex;
       flex-direction: column;
-      gap: 0.75rem;
+      gap: 1.1rem;
       width: 100%;
       margin-top: 0.5rem;
+    }
+
+    .link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
     }
 
     .pill {
@@ -150,6 +168,37 @@
       box-shadow: 0 0 18px var(--cyan-glow), 0 0 6px var(--cyan-glow);
       color: var(--cyan);
       outline: none;
+    }
+
+    /* Muted / coming-soon pill */
+    .pill-muted {
+      display: block;
+      width: 100%;
+      padding: 0.75rem 1.5rem;
+      border: 1.5px solid #475569;
+      border-radius: 9999px;
+      background: transparent;
+      color: var(--gray-sub);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      letter-spacing: 0.05em;
+      cursor: default;
+      user-select: none;
+    }
+
+    .pill-muted .coming-soon {
+      font-size: 0.72rem;
+      color: #475569;
+      letter-spacing: 0.04em;
+      margin-left: 0.5rem;
+    }
+
+    /* Link caption */
+    .link-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gray);
+      letter-spacing: 0.03em;
     }
 
     /* Footer */
@@ -182,10 +231,32 @@
     <p class="subtitle">Turn the wheel.</p>
 
     <nav class="links" aria-label="Links">
-      <a class="pill" href="https://apilama.com"            target="_blank" rel="noopener noreferrer">Blog</a>
-      <a class="pill" href="https://badcop.tech"            target="_blank" rel="noopener noreferrer">Fractional CTO</a>
-      <a class="pill" href="https://x.com/mpetyx"           target="_blank" rel="noopener noreferrer">Twitter / X</a>
-      <a class="pill" href="https://www.linkedin.com/in/michaelpetychakis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+      <div class="link-item">
+        <a class="pill" href="https://apilama.com" target="_blank" rel="noopener noreferrer">Blog</a>
+        <span class="link-caption">AI, scaling, and the long arc of technology</span>
+      </div>
+
+      <div class="link-item">
+        <a class="pill" href="https://badcop.tech" target="_blank" rel="noopener noreferrer">Fractional CTO</a>
+        <span class="link-caption">I build alongside you</span>
+      </div>
+
+      <div class="link-item">
+        <a class="pill" href="https://x.com/mpetyx" target="_blank" rel="noopener noreferrer">Twitter / X</a>
+        <span class="link-caption">Short-form thoughts</span>
+      </div>
+
+      <div class="link-item">
+        <a class="pill" href="https://www.linkedin.com/in/michaelpetychakis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <span class="link-caption">Professional network</span>
+      </div>
+
+      <div class="link-item">
+        <span class="pill-muted">Manifesto<span class="coming-soon">(to be published)</span></span>
+        <span class="link-caption">The 200-year vision</span>
+      </div>
+
     </nav>
 
   </main>
