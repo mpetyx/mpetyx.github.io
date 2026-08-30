@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Petychakis</title>
+  <title>Michael Petychakis · Selective Advisory</title>
+  <meta name="theme-color" content="#0F172A" />
+  <link rel="canonical" href="https://mpetyx.com/" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="lambda_owl_avatar.png" />
@@ -12,15 +14,15 @@
   <!-- Open Graph / Social -->
   <meta property="og:type"         content="website" />
   <meta property="og:url"          content="https://mpetyx.com/" />
-  <meta property="og:title"        content="Michael Petychakis" />
-  <meta property="og:description"  content="λ(0) → 700 · Technology leader, entrepreneur, and builder. CTO · Fractional CTO · API & AI enthusiast." />
+  <meta property="og:title"        content="Michael Petychakis · Selective Advisory" />
+  <meta property="og:description"  content="λ(0) → 700 · Selective advisory and fractional CTO. Architected, not assembled." />
   <meta property="og:image"        content="https://mpetyx.com/lambda_owl_avatar.png" />
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:site"        content="@mpetyx" />
-  <meta name="twitter:title"       content="Michael Petychakis" />
-  <meta name="twitter:description" content="λ(0) → 700 · Technology leader, entrepreneur, and builder." />
+  <meta name="twitter:title"       content="Michael Petychakis · Selective Advisory" />
+  <meta name="twitter:description" content="λ(0) → 700 · Selective advisory and fractional CTO. Architected, not assembled." />
   <meta name="twitter:image"       content="https://mpetyx.com/lambda_owl_avatar.png" />
-  <meta name="description"         content="λ(0) → 700 · Technology leader, entrepreneur, and builder. CTO · Fractional CTO · API & AI enthusiast." />
+  <meta name="description"         content="λ(0) → 700 · Selective advisory and fractional CTO. Architected, not assembled." />
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VCH03FMBN"></script>
@@ -35,7 +37,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
   <style>
     *, *::before, *::after {
@@ -54,34 +56,40 @@
       --gray-sub:  #94A3B8;
     }
 
-    html, body {
-      height: 100%;
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
       background-color: var(--bg);
       color: var(--white);
       font-family: 'Montserrat', sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
       min-height: 100vh;
-      padding: 3rem 1.5rem;
-    }
-
-    /* Main card */
-    .card {
+      padding: 3.5rem 1.5rem 2.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 1.5rem;
-      width: 100%;
-      max-width: 480px;
-      text-align: center;
     }
 
-    /* Logo */
+    .page {
+      width: 100%;
+      max-width: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.7rem;
+    }
+
     .logo {
       width: 140px;
       height: 140px;
@@ -93,6 +101,7 @@
       transition: filter 0.3s ease;
       animation: owl-blink 10s ease-in-out infinite;
       transform-origin: center center;
+      margin-bottom: 0.6rem;
     }
 
     .logo:hover {
@@ -101,7 +110,6 @@
         drop-shadow(0 0 60px var(--cyan-glow));
     }
 
-    /* Name */
     h1.name {
       font-family: 'Montserrat', sans-serif;
       font-weight: 700;
@@ -111,7 +119,6 @@
       line-height: 1.2;
     }
 
-    /* Lambda tagline */
     .tagline {
       font-family: 'JetBrains Mono', monospace;
       font-size: clamp(1rem, 3.5vw, 1.2rem);
@@ -119,17 +126,33 @@
       letter-spacing: 0.04em;
     }
 
-    /* Greek subtitle */
-    .subtitle {
+    .job {
       font-family: 'Montserrat', sans-serif;
-      font-style: italic;
-      font-weight: 400;
+      font-weight: 500;
+      font-size: clamp(1rem, 3.2vw, 1.15rem);
+      line-height: 1.5;
+      color: var(--white);
+      max-width: 28em;
+      margin-top: 0.55rem;
+    }
+
+    .brand {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
       font-size: 0.95rem;
       color: var(--gray-sub);
       letter-spacing: 0.02em;
     }
 
-    /* ── Owl blink animation ── */
+    .subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 0.9rem;
+      color: var(--gray);
+      letter-spacing: 0.02em;
+    }
+
     @keyframes owl-blink {
       0%,   94%  { transform: scaleY(1);    }
       95%         { transform: scaleY(0.94); }
@@ -138,20 +161,46 @@
       100%        { transform: scaleY(1);    }
     }
 
-    /* Link items (pill + caption wrapper) */
-    .links {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-      width: 100%;
-      margin-top: 0.5rem;
+    /* ── Shared section ── */
+    .block {
+      margin-top: 2.4rem;
     }
 
-    .link-item {
+    .block-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .prose {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--gray-sub);
+    }
+
+    .prose + .prose {
+      margin-top: 0.7rem;
+    }
+
+    .proof .prose {
+      font-size: 1rem;
+      color: var(--gray-sub);
+    }
+
+    /* ── Primary CTA ── */
+    .cta {
+      margin-top: 2.4rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 0.35rem;
+      gap: 0.45rem;
+      text-align: center;
     }
 
     .pill {
@@ -166,6 +215,7 @@
       font-size: 0.9rem;
       letter-spacing: 0.05em;
       text-decoration: none;
+      text-align: center;
       transition:
         background 0.22s ease,
         box-shadow  0.22s ease,
@@ -180,7 +230,116 @@
       outline: none;
     }
 
-    /* Muted / coming-soon pill */
+    .pill-primary {
+      background: var(--cyan-dim);
+    }
+
+    .link-caption {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--gray);
+      letter-spacing: 0.03em;
+      line-height: 1.55;
+      text-align: center;
+    }
+
+    .cta-note {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.82rem;
+      line-height: 1.6;
+      color: var(--gray);
+      max-width: 34em;
+      margin-top: 0.35rem;
+    }
+
+    /* ── How it works ── */
+    .steps {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.05rem;
+    }
+
+    .steps li {
+      display: grid;
+      grid-template-columns: 2.1rem 1fr;
+      gap: 0.7rem;
+      align-items: start;
+    }
+
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--cyan);
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+      padding-top: 0.05rem;
+    }
+
+    .step-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.4;
+      margin-bottom: 0.2rem;
+    }
+
+    .step-body {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: var(--gray-sub);
+    }
+
+    /* ── Not for ── */
+    .not-for-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .not-for-list li {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      color: var(--gray-sub);
+      padding-left: 1rem;
+      position: relative;
+    }
+
+    .not-for-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: var(--gray);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ── Secondary links ── */
+    .elsewhere {
+      margin-top: 2.75rem;
+    }
+
+    .links {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      width: 100%;
+    }
+
+    .link-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
     .pill-muted {
       display: block;
       width: 100%;
@@ -192,6 +351,7 @@
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.9rem;
       letter-spacing: 0.05em;
+      text-align: center;
       cursor: default;
       user-select: none;
     }
@@ -203,15 +363,7 @@
       margin-left: 0.5rem;
     }
 
-    /* Link caption */
-    .link-caption {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 0.72rem;
-      color: var(--gray);
-      letter-spacing: 0.03em;
-    }
-
-    /* Footer */
+    /* ── Footer ── */
     footer {
       margin-top: 3rem;
       font-family: 'JetBrains Mono', monospace;
@@ -220,53 +372,119 @@
       letter-spacing: 0.06em;
       text-align: center;
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .logo { animation: none; }
+      .logo, .pill { transition: none; }
+    }
   </style>
 </head>
 <body>
 
-  <main class="card">
+  <main class="page">
 
-    <img
-      class="logo"
-      src="lambda_owl_avatar.png"
-      alt="Owl Lambda — Michael Petychakis logo"
-      width="140"
-      height="140"
-    />
+    <header class="hero">
+      <img
+        class="logo"
+        src="lambda_owl_avatar.png"
+        alt="Owl Lambda — Michael Petychakis logo"
+        width="140"
+        height="140"
+      />
 
-    <h1 class="name">Michael Petychakis</h1>
+      <h1 class="name">Michael Petychakis</h1>
 
-    <p class="tagline">&#955;(0) &#8594; 700</p>
+      <p class="tagline">&#955;(0) &#8594; 700</p>
 
-    <p class="subtitle">Turn the wheel.</p>
+      <p class="job">I sit in the room after you’ve already outgrown generic advice.</p>
 
-    <nav class="links" aria-label="Links">
+      <p class="brand">Architected, not assembled.</p>
 
-      <div class="link-item">
-        <a class="pill" href="https://apilama.com" target="_blank" rel="noopener noreferrer">Blog</a>
-        <span class="link-caption">AI, scaling, and the long arc of technology</span>
+      <p class="subtitle">Turn the wheel.</p>
+    </header>
+
+    <section class="block proof" aria-label="Proof">
+      <p class="prose">I scaled an engineering org 0&#8594;700, $0 to $50M+ ARR, 7 countries, 2 acquisitions. I take a few advisory seats. Fractional CTO only when I have the days.</p>
+    </section>
+
+    <div class="cta">
+      <a
+        class="pill pill-primary"
+        href="https://www.linkedin.com/in/michaelpetychakis/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >Start a working session</a>
+      <span class="link-caption">LinkedIn. Company, size, 60-day decision, what you tried.</span>
+      <p class="cta-note">When you write, include: company and size; the decision on the table in the next 60 days; what you’ve already tried; session, retainer, or fractional.</p>
+    </div>
+
+    <section class="block" aria-labelledby="who-label">
+      <h2 class="block-label" id="who-label">Who it’s for</h2>
+      <p class="prose">Founders and CEOs at 20–200 people who need a senior technical brain without hiring another executive. PE operators who want someone who’s already lived the messy version.</p>
+    </section>
+
+    <section class="block" aria-labelledby="how-label">
+      <h2 class="block-label" id="how-label">How it works</h2>
+      <ol class="steps">
+        <li>
+          <span class="step-num" aria-hidden="true">01</span>
+          <div>
+            <p class="step-title">Working session</p>
+            <p class="step-body">One live problem (org, AI, architecture, hiring). Leave with a decision.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">02</span>
+          <div>
+            <p class="step-title">Advisory retainer</p>
+            <p class="step-body">In the room monthly.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num" aria-hidden="true">03</span>
+          <div>
+            <p class="step-title">Fractional CTO</p>
+            <p class="step-body">Only if I have the days, and only if the working session proved it.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="block" aria-labelledby="not-label">
+      <h2 class="block-label" id="not-label">Not for</h2>
+      <ul class="not-for-list">
+        <li>People collecting mentors.</li>
+        <li>Teams that want a slide deck.</li>
+        <li>Anyone who needs me full-time — I already have that job.</li>
+      </ul>
+    </section>
+
+    <nav class="elsewhere" aria-label="Elsewhere">
+      <h2 class="block-label">Elsewhere</h2>
+      <div class="links">
+
+        <div class="link-item">
+          <a class="pill" href="https://apilama.com" target="_blank" rel="noopener noreferrer">Essays</a>
+          <span class="link-caption">apilama.com — how I think</span>
+        </div>
+
+        <div class="link-item">
+          <a class="pill" href="https://badcop.tech" target="_blank" rel="noopener noreferrer">BadCop</a>
+          <span class="link-caption">AI tech diligence I built. The product, not the person.</span>
+        </div>
+
+        <div class="link-item">
+          <a class="pill" href="https://x.com/mpetyx" target="_blank" rel="noopener noreferrer">X</a>
+          <span class="link-caption">x.com/mpetyx</span>
+        </div>
+
+        <div class="link-item">
+          <span class="pill-muted">Manifesto<span class="coming-soon">(coming soon)</span></span>
+          <span class="link-caption">The 200-year vision</span>
+        </div>
+
       </div>
-
-      <div class="link-item">
-        <a class="pill" href="https://badcop.tech" target="_blank" rel="noopener noreferrer">Fractional CTO</a>
-        <span class="link-caption">I build alongside you</span>
-      </div>
-
-      <div class="link-item">
-        <a class="pill" href="https://x.com/mpetyx" target="_blank" rel="noopener noreferrer">Twitter / X</a>
-        <span class="link-caption">Short-form thoughts</span>
-      </div>
-
-      <div class="link-item">
-        <a class="pill" href="https://www.linkedin.com/in/michaelpetychakis/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        <span class="link-caption">Professional network</span>
-      </div>
-
-      <div class="link-item">
-        <span class="pill-muted">Manifesto<span class="coming-soon">(to be published)</span></span>
-        <span class="link-caption">The 200-year vision</span>
-      </div>
-
     </nav>
 
   </main>
