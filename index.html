@@ -234,6 +234,11 @@
       background: var(--cyan-dim);
     }
 
+    .pill-exploration {
+      background: linear-gradient(110deg, rgba(6, 182, 212, 0.14), rgba(99, 102, 241, 0.1));
+      box-shadow: 0 0 24px rgba(6, 182, 212, 0.08);
+    }
+
     .link-caption {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.72rem;
@@ -241,6 +246,10 @@
       letter-spacing: 0.03em;
       line-height: 1.55;
       text-align: center;
+    }
+
+    .pill-exploration + .link-caption {
+      color: var(--gray-sub);
     }
 
     .cta-note {
@@ -472,6 +481,11 @@
         <div class="link-item">
           <a class="pill" href="https://badcop.tech" target="_blank" rel="noopener noreferrer">BadCop</a>
           <span class="link-caption">AI tech diligence I built. The product, not the person.</span>
+        </div>
+
+        <div class="link-item">
+          <a class="pill pill-exploration" href="/theoxenia/"><span aria-hidden="true">✦ </span>Alien Exploration<span aria-hidden="true"> ↗</span></a>
+          <span class="link-caption">Are we alone? Real telescope data. Open science. Follow the evidence.</span>
         </div>
 
         <div class="link-item">
